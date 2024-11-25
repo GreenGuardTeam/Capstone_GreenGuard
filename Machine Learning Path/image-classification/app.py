@@ -6,11 +6,9 @@ from tensorflow.keras.utils import load_img, img_to_array
 
 app = Flask(__name__)
 
-# Load model sekali di awal
-model = load_model('model/image-class.keras')  # Ganti dengan path ke model Anda
+model = load_model('model/image-class.keras')  
 
 
-# Mapping kelas indeks ke label
 class_indices = {
     'Banana_Banana_cordana': 0, 'Banana_Banana_healthy': 1, 'Banana_Banana_pestalotiopsis': 2, 'Banana_Banana_sigatoka': 3,
     'Bean_Bean_angular_leaf_spot': 4, 'Bean_Bean_bean_rust': 5, 'Bean_Bean_healthy': 6,
