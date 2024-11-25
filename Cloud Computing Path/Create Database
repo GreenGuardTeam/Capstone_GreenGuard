@@ -1,0 +1,44 @@
+# Panduan Membuat Database di Google Cloud SQL
+
+## 1. Membuat Database di Google Cloud SQL
+Masuk ke Google Cloud Console dan pilih proyek yang Anda gunakan.
+
+**Langkah-langkah:**
+- Buka Cloud SQL dari menu navigasi (Database > SQL).
+- Klik **Create Instance** dan pilih MySQL sebagai jenis database.
+- Isi konfigurasi dasar:
+   - **Instance ID**: green-guard-database
+   - **Password root**: Buat password untuk root database.
+   - **Region**: Pilih region yang sesuai dengan lokasi pengguna atau aplikasi Anda.
+   - **Zonal Availability**: Pilih Multiple zones untuk failover otomatis.
+- Klik **Create Instance** dan tunggu proses selesai.
+
+## 2. Membuat Database dan Tabel
+- **Membuat Database**:
+   - Pada halaman instance, buka tab Databases.
+   - Klik **Create Database**.
+   - Nama Database: `green_guard_db`.
+   - Klik **Create**.
+
+- **Membuat Tabel**:
+   - Buka SQL Editor dengan masuk ke **SQL > Open Cloud Shell Editor**.
+   - Pilih database `green_guard_db` dan masukkan SQL berikut:
+
+   ```sql
+   CREATE TABLE PlantDiseases (
+       disease_id INT AUTO_INCREMENT PRIMARY KEY,
+       disease_name VARCHAR(100) NOT NULL,
+       symptoms TEXT,
+       solution TEXT,
+       image_reference VARCHAR(255)
+   );
+
+   CREATE TABLE Scans (
+       scan_id INT AUTO_INCREMENT PRIMARY KEY,
+       disease_id INT,
+       scan_image VARCHAR(255) NOT NULL,
+       diagnosis_result VARCHAR(100),
+       confidence_level FLOAT,
+       scan_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       FOREIGN KEY (disease_id) REFERENCES PlantDiseases(disease_id)
+   );
