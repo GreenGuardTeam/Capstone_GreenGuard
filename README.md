@@ -4,7 +4,7 @@
 **Team Members**:  
 - **Machine Learning**: Laras Ayodya Sari, Reyhanssan Islamey, Rolly Dhea Venesia Sibuea  
 - **Cloud Computing**: Dimas Mario, Sela Dwi Apriliyana  
-- **Mobile Development**: Ririth Coshy Yah, Yessica Thipandona  
+- **Mobile Development**: Yessica Thipandona, Ririth Coshy Yah  
 
 ---
 
@@ -62,14 +62,6 @@ To use machine learning for plant species identification, disease detection, and
 - **Development Tools**: Android Studio, Figma, Postman, VSCode, GitHub
 - **Machine Learning Frameworks**: TensorFlow, various optimization algorithms for model tuning.
 - **Cloud Services**: Google Cloud for storage and API, Firebase for data handling and security.
-
----
-
-## Potential Challenges
-
-1. Variability in plant images (lighting, background) affecting detection accuracy.
-2. Challenges in integrating disease and treatment datasets.
-3. Memory limitations on user devices when processing large image data.
 
 ---
 
