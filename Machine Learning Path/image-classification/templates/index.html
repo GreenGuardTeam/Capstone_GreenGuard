@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Prediction</title>
+</head>
+<body>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label for="image">Upload an image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">Error: {{ error }}</p>
+    {% endif %}
+
+    {% if nama_tanaman and penyakit_tanaman and confidence_score %}
+        <h2>Prediction Result:</h2>
+        <p><strong>Nama Tanaman:</strong> {{ nama_tanaman }}</p>
+        <p><strong>Penyakit Tanaman:</strong> {{ penyakit_tanaman }}</p>
+        <p><strong>Confidence Score:</strong> {{ confidence_score }}</p>
+    {% endif %}
+</body>
+</html>
