@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+        .details {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .details h3 {
+            margin-top: 15px;
+        }
+        .details p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Disease Prediction</h1>
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload Image</label>
+                <input type="file" name="file" id="file" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Display Results after Prediction -->
+        <div id="result">
+            {% if nama_tanaman %}
+            <div class="result">
+                <h2>Prediction Results</h2>
+                <p><strong>Plant Name:</strong> {{ nama_tanaman }}</p>
+                <p><strong>Plant Disease:</strong> {{ penyakit_tanaman }}</p>
+                <p><strong>Confidence:</strong> {{ confidence }}%</p>
+                
+                <!-- Display Disease Details -->
+                {% if disease_info %}
+                    <div class="details">
+                        <h3>Description</h3>
+                        <p>{{ disease_info.description }}</p>
+
+                        <h3>Solution</h3>
+                        <p>{{ disease_info.solution }}</p>
+
+                        <h3>Tips</h3>
+                        <p>{{ disease_info.tips }}</p>
+                    </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if error %}
+            <div class="error">
+                <p><strong>Error:</strong> {{ error }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
