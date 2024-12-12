@@ -1,34 +1,30 @@
-# project-capstone
-**CLOUD COMPUTING**
+System Architecture Overview
+The diagram depicts the flow of data and processes within the system, which consists of the following components:
 
-**Week 1**
+User Interaction via Mobile Application:
 
-Cloud Aristecture Diagram 
-![cloud arsitecture](https://github.com/user-attachments/assets/b4027d51-5069-4194-8481-60f5dfddf216)
+The user interacts with the mobile application to provide input or make a request. The mobile app serves as the front-end interface.
+API Gateway:
 
-1. **Start with Users**  
-   Draw a human icon on the left, representing the app user. Here users are farmers or individuals who want to detect plant diseases.
+The mobile application communicates with the backend server through an API gateway. This gateway routes the requests to the appropriate backend services.
+Backend Node with Flask Framework:
 
-2. **Mobile Application**  
-   This mobile application will scan plant images.
+The backend is built using the Flask framework, which processes the requests from the mobile application. It acts as the intermediary between the user, the ML model, and other services.
+Machine Learning Model:
 
-3. **Google Cloud Platform (GCP) - API Gateway**  
-   API Gateway functions as a bridge that manages access to APIs and directs requests to backend services.
+The ML model hosted within the backend processes the data and generates the output or prediction based on the user's input.
+Cloud Storage Bucket:
 
-4. **Backend Service (Node.js)**  
-   This backend will handle requests from applications and carry out processes to call Machine Learning (ML) models and access data from the database.
+Static resources or large datasets required by the ML model are stored in a Google Cloud Storage bucket. The backend accesses these resources when needed.
+Deployment via Cloud Run:
 
-5. **Machine Learning Models (ML)**  
-   The ML model will receive image input from the backend, process it, and output plant disease diagnosis results.
+The Flask backend and ML model are deployed on Google Cloud Run, a serverless platform, enabling scalable and efficient management of backend services.
+Response Delivery:
 
-6. **Databases (Cloud SQL)**  
-   This database stores plant disease reference data, additional information, and treatment solutions.
+After processing the data, the system sends the output or result back to the mobile application, where it is displayed to the user.
+Key Features:
+Scalable Deployment: The use of Cloud Run ensures that the backend services scale automatically based on demand.
+Seamless Integration: The system integrates a mobile application with backend services and ML processing, providing a user-friendly experience.
+Cost Efficiency: With a serverless architecture, resources are allocated only when required, reducing operational costs.
+This architecture is ideal for applications requiring real-time processing, such as personalized recommendations, data analysis, or image recognition tasks.
 
-7. **Cloud Storage (Image Storage)**  
-   Cloud Storage functions to store plant images uploaded by users via the application.
-
-8. **Output Results and Response to Users**  
-   Mobile application that shows responses in the form of diagnoses and solutions.
-
-9. **Monitoring and Logging**  
-   Cloud Monitoring to log activity and assist in performance monitoring.
