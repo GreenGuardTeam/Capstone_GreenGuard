@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+        <!-- Home Fragment -->
+        <fragment
+            android:id="@+id/nav_home"
+            android:name="com.example.greenguard.ui.home.HomeFragment"
+            android:label="Home"
+            tools:layout="@layout/fragment_home">
+            <!-- Tidak ada lagi action ke DetailActivity -->
+        </fragment>
+
+        <!-- History Fragment -->
+        <fragment
+            android:id="@+id/nav_history"
+            android:name="com.example.greenguard.ui.history.HistoryFragment"
+            android:label="@string/history"
+            tools:layout="@layout/fragment_history" />
+    </navigation>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">GreenGuard</string>
+    <string name="back_button">Kembali</string>
+    <string name="help_icon">Ikon Bantuan</string>
+    <string name="info_icon">Ikon Informasi</string>
+    <string name="tips_icon">Ikon Tips</string>
+    <string name="disease_image">Gambar Penyakit</string>
+    <string name="delBtnDesc">Hapus Riwayat</string>
+    <string name="empty_history">There is no history yet</string>
+    <string name="empty_info">There is no information found</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="analyze">Predict</string>
+    <string name="topText">Choose where you want to take
+ the picture from! </string>
+    <string name="home">Home</string>
+    <string name="output">Result</string>
+    <string name="select_image">Select Image</string>
+    <string name="home_message">Hi! Let\'s Find Fun Article About Plant!</string>
+    <string name="history">History</string>
+    <string name="read_more">Read More</string>
+    <string name="save_history">Save to History</string>
+    <string name="classification_failed">Image classifier failed. See error logs for details</string>
+    <string name="empty_image">Please input yout image first"</string>
+    <string name="error_occurred">An error occurred</string>
+    <string name="unknown">Unknown information</string>
+    <string name="no_tips_available">No tips information available</string>
+    <string name="prediction_succeeded">Prediction Successs</string>
+    <string name="prediction_data_empty">Prediction data is empty</string>
+    <string name="server_error">Server error</string>
+    <string name="unexpected_error">An unexpected error occurred: %1$s</string>
+    <string name="crop_error">Error cropping image</string>
+    <string name="camera_failure">Failed to take image</string>
+    <string name="detail">Detail</string>
+
+
+</resources>

@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GreenGuard" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green</item>
+        <item name="android:fontFamily">@font/dm_sans</item>
+    </style>
+
+    <style name="Theme.GreenGuard" parent="Base.Theme.GreenGuard" />
+
+    <style name="fab_3_rounded">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.GreenGuard.SplashScreen">
+        <item name="android:windowBackground">@color/green_soft</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/gg</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+    </style>
+
+</resources>
