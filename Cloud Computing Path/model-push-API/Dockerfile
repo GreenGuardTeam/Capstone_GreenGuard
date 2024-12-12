@@ -1,20 +1,17 @@
-# Use the official Python image as a base image
-FROM python:3.9-slim
+FROM python:3.10.3-slim-buster
 
-# Set the working directory in the container
-WORKDIR /app
+WORKDIR /workspace
 
-# Copy the requirements file
-COPY requirements.txt .
+COPY requirements.txt requirements.txt
 
-# Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Copy the rest of the application files
 COPY . .
 
-# Expose the port the app runs on
+ENV PYTHONUNBUFFERED=1
+
+ENV HOST 0.0.0.0
+
 EXPOSE 8080
 
-# Command to run the application
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
